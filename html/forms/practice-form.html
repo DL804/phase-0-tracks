@@ -1,8 +1,51 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Form</title>
+  <title>Programming Language Preference</title>
 </head>
 <body>
+  <form name="languagepreference" action="success.html" method="post">
 
+    <fieldset>
+
+      <div>
+        <label>Full Name:</label>
+        <input type="name" name="fullname">
+      </div>
+
+      <div>
+        <label>Email Address:</label>
+        <input type="email" name="emailaddress">
+      </div>
+
+      <div>
+        <label>Website:</label>
+        <input type="url" name="websiteurl">
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+
+      <div>
+        <label>What is your favorite web language:</label>
+        <select name="language">
+          <option value="Ruby">Ruby</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Python">Python</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Why is that your favorite language?</label>
+        <br>
+        <textarea name="response"  rows="10" cols="50">Write your response here...</textarea>
+      </div>
+
+    </fieldset>
+
+    <button type="submit">Submit Your Preferences</button>
+
+  </form>
 </body>
 </html>
