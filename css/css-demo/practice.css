@@ -13,3 +13,11 @@ section.job {
 ul.list {
 	font-size: .8em
 }
+
+section:first-of-type {
+	background-color: blue
+}
+
+ul > li {
+	color:red;
+}
