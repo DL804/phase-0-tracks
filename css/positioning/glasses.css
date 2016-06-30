@@ -1,0 +1,22 @@
+div#octopus{
+	position:relative;
+	margin:auto;
+	width:50%;
+	top:150px
+}
+
+
+div#hat {
+   	position:relative;
+  	margin:auto;
+	width:50%;
+	bottom:250px
+}
+
+div#glasses{
+    position:relative;
+	bottom:215px; 
+	left:520px
+}
+
+* { outline: 1px solid red; }
