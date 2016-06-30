@@ -32,16 +32,22 @@ figcaption {
 }
 
 body {
-  width: 960px;
+  max-width: 960px;
+  min-width: 100px;
 }
 
 section#external-links {
-  width: 200px;
+  width: 15%;
   display: inline-block;
   vertical-align: top;
+  padding-left: 5%;
+  padding-right: 2%;
+  z-index: 0;
 }
 
 main {
-  width: 756px;
+  width: 70%;
   display: inline-block;
+  padding-left: 7%
+  z-index: 0;
 }
