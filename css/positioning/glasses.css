@@ -14,9 +14,7 @@ div#hat {
 }
 
 div#glasses{
-    position:relative;
-	bottom:215px; 
-	left:520px
+    position:absolute;
+	top:255px; 
+	left:525px
 }
-
-* { outline: 1px solid red; }
