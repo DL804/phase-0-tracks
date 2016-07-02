@@ -1,22 +1,19 @@
 body{
   max-width:960px;
-    min-width: 400px
-  }
+  min-width:250px;
+}
+
+
+#external-links{
+  width:20%;
+  display:inline-block;
+  vertical-align:top;
+}
 
 main{
-  width:75%;
-  display: inline-block;
-  vertical-align:text-top;
+  width:79%;
+  display:inline-block;
 }
-
-#external-links {
-  width:20%;
-  display: inline-block;
-  vertical-align:text-top;
-
-
-}
-
 
 blockquote {
   border-left: 5px solid blue;
@@ -52,17 +49,16 @@ figcaption {
   text-align: right;
 }
 
-@media screen and (max-width: 1000px) {
+
+
+
+@media screen and (max-width: 400px) {
   body {
-    background-color: hotpink;
+    font-size: 25px;
+  }
+  #external-links{
+    color:red;
   }
 }
 
-
-@media screen and (min-width: 1100px) {
-  body {
-    font-size: 20px
-  }
-  }
-}
 
