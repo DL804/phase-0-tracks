@@ -1,4 +1,21 @@
+img[src="hat.png"] {
+	margin: auto;
+	display: block;
+	position: relative;
+	top: 85px;
+}
+
+img[src="glasses.png"] {
+	margin: auto;
+	display: block;
+	position: relative;
+	top: 323px;
+	left: 5px;
+	z-index: 1;
+}
+
 img[src="octopus.png"] {
 	margin: auto;
 	display: block;
 }
+
