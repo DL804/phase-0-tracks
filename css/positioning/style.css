@@ -1,0 +1,24 @@
+img {
+	margin: auto;
+	display: block;
+	position: relative;
+}
+
+img[src="octopus.png"] {
+	top: -100px;
+}
+
+img[src="hat.png"] {
+	top: 5px;
+	left: 10px;
+	z-index: 1;
+}
+
+img[src="glasses.png"] {
+	top: 223px;
+	left: 5px;
+	z-index: 2;
+}
+
+
+
