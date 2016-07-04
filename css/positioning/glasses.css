@@ -1,20 +1,20 @@
-div#octopus{
-	position:relative;
-	margin:auto;
+#octopus{
+	position: relative;
+	margin: auto;
 	width:50%;
-	top:150px
+	top: 150px
 }
 
-
-div#hat {
-   	position:relative;
-  	margin:auto;
-	width:50%;
-	bottom:250px
+#hat {
+   	position: relative;
+  	margin: auto;
+	width: 50%;
+	bottom: 250px
 }
 
-div#glasses{
-    position:absolute;
-	top:255px; 
-	left:525px
+#glasses{
+    position: absolute;
+    left: 45px;
+    bottom: -99px;
+
 }
