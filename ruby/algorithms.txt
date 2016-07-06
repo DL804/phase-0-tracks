@@ -1,0 +1,16 @@
+Robot elevator
+
+- Walk up to the elevator door, look for the current floor number above the door:
+- If destination floor is a lower number than the current floor number, press the down arrow button on the wall with your finger
+- Otherwise press the up arrow button on the wall with your finger
+- Elevator doors will open, take 5 steps into the elevator torward wall A, turn left and move forward until you reach wall B, turn left and move forward until you reach wall C. Look for elevator button #1. 
+- If elevator button is missing, turn left and move forward until you reach wall D and turn right facing wall C
+- Look for destination floor number and press the button with your finger
+- Enjoy the ride!
+
+Trash
+- There is a blue(recycle)bin to the left, black(trash)in the middle, green(compost) to the area in back of the house
+- Until a trash bag is full
+	-remove the bag and take it to the back of the house where the bins are located 
+	-start with the first bin to the left, if color does not match your trash bag, move to the next bin until trash bag in hand matches the bin
+- Then open the lid and dump the trash. 
