@@ -1,0 +1,9 @@
+Robot elevator
+
+- Walk up to the elevator door, look for the current floor number above the door:
+- If destination floor is a lower number than the current floor number, press the down arrow button on the wall with your finger
+- Otherwise press the up arrow button on the wall with your finger
+- Elevator door will open, take 5 steps in the elevator torward wall A, turn left and move forward until you reach wall B, turn left and move forward until you reach wall C. Look for elevator button #1. 
+- If elevator button is missing, turn left and move forward until you reach wall D and turn right facing wall C
+- Look for destination floor number and press the button with your finger
+- Enjoy the ride!
