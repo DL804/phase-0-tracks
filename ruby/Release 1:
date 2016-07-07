@@ -1,0 +1,49 @@
+# Release 1:
+
+# Ask for the vampire's name
+# Ask for age and year of birth
+# Ask if they want some garlic bread
+# Ask if they like to enroll in health insurance 
+# Set boolean for vampire
+
+puts "What is your name?"
+name = gets.chomp
+
+puts "How old are you?"
+vampire_age = gets.chomp.to_i
+
+puts "What year were you born?"
+vampire_birth_year = gets.chomp.to_i
+
+puts "Do you want some garlic bread?"
+garlic = gets.chomp == 'yes'
+
+puts "Would you like to enroll in the company's health insurance"
+insurance = gets.chomp == 'yes'
+
+
+Probably_not_a_vampire = True
+
+# Release 2:
+
+current_year = 2016
+actual_age = (current_year - vampire_birth_year) == vampire_age
+
+
+
+
+# If age is correct, eats garlic bread and needs insurance, not a vampire
+
+if actual_age && (insurance && garlic)
+	puts "Probably not a vampire"
+else 
+	puts "Probably a vampire"
+end
+
+
+
+
+
+
+
+
