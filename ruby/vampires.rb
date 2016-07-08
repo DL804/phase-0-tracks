@@ -12,10 +12,10 @@ health = gets.chomp
 allergies = ""
 
 until allergies == "done"
-	puts "Name any allergies you have. Type done when you are finished."
+	puts "Name an allergy you have. (Type done if you are finished.)"
 	allergies = gets.chomp
 	if allergies == "sunshine"
-		puts "Probably a vampire"
+		puts "Probably a vampire."
 		allergies = "done"
 	end
 end
@@ -23,11 +23,12 @@ end
 if name == "Drake Cula" || name == "Tu Fang"
 	puts "Definitely a vampire."
 elsif age == age_year_match && garlic_bread == "yes" 
-	puts "Probably not a vampire"
+	puts "Probably not a vampire."
 elsif age != age_year_match && (garlic_bread == "no" && health == "no")
-	puts "Almost certainly a vampire"
+	puts "Almost certainly a vampire."
 elsif age != age_year_match && (garlic_bread == "no" || health == "no")
 	puts "Probably a vampire"
 else puts "Results inconclusive."
 end	
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
