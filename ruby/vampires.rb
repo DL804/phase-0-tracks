@@ -21,21 +21,19 @@ while employee_count < num_employees do
 		puts "Name an allergy you have. (Type done if you are finished.)"
 		allergies = gets.chomp
 		if allergies == "sunshine"
-			puts "Probably a vampire."
+	 		puts "Probably a vampire"
 			allergies = "done"
+		elsif name == "Drake Cula" || name == "Tu Fang"
+		puts "Definitely a vampire."
+		elsif age == age_year_match && garlic_bread == "yes" 
+		puts "Probably not a vampire."
+		elsif age != age_year_match && (garlic_bread == "no" && health == "no")
+		puts "Almost certainly a vampire."
+		elsif age != age_year_match && (garlic_bread == "no" || health == "no")
+		puts "Probably a vampire"
+		else puts "Results inconclusive."
 		end
 	end
-
-	if name == "Drake Cula" || name == "Tu Fang"
-		puts "Definitely a vampire."
-	elsif age == age_year_match && garlic_bread == "yes" 
-		puts "Probably not a vampire."
-	elsif age != age_year_match && (garlic_bread == "no" && health == "no")
-		puts "Almost certainly a vampire."
-	elsif age != age_year_match && (garlic_bread == "no" || health == "no")
-		puts "Probably a vampire"
-	else puts "Results inconclusive."
-	end	
 
 	employee_count +=1
 
