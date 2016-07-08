@@ -9,7 +9,16 @@ puts "Our company cafeteria serves garlic bread. Should we order some for you?"
 garlic_bread = gets.chomp
 puts "Would you like to enroll in the company's health insurance?"
 health = gets.chomp
+allergies = ""
 
+until allergies == "done"
+	puts "Name any allergies you have. Type done when you are finished."
+	allergies = gets.chomp
+	if allergies == "sunshine"
+		puts "Probably a vampire"
+		allergies = "done"
+	end
+end
 
 if name == "Drake Cula" || name == "Tu Fang"
 	puts "Definitely a vampire."
