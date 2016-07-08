@@ -18,7 +18,7 @@ while employee_count < num_employees do
 	allergies = ""
 
 	until allergies == "done" do
-		puts "Name an allergy you have. (Type done if you are finished.)"
+		puts "Name an allergy you have. (Type done if you are finished and have no more allergies to share.)"
 		allergies = gets.chomp
 		if allergies == "sunshine"
 	 		puts "Probably a vampire"
