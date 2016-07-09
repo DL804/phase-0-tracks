@@ -1,10 +1,12 @@
+# 4.4 Solo Challenge
+
 	puts "How many users will we process"
 	number_users = gets.chomp.to_i
 
 until number_users <= 0 
 	
 	puts "what is your name?"
-	name = gets.chomp == "Drake Cula" || "Tu Fang"
+	name = gets.chomp == "Tu Fang" || "Drake Cula"
 	
 	puts "How old are you?"
 	vampire_input_age = gets.chomp.to_i
@@ -30,34 +32,42 @@ until number_users <= 0
 	# If vampire input age is incorrect, hates garlic bread or waives insurance = Probably a vampire
 	# If vampire age is incorrect, hates garlic bread and doesn't want insurance = Almost certainly a vampire
 	# Name of "Drake Cula" or "Tu Fang" is definitely a vampire 
+	# 
 	
-=begin I think I added an extra question in there, already started with the allergy yes question and trying to figure out how to get the list into it.... then I realized we were suppose to only do a list. hope this is okay, leaving it in the code so I can look back as a reminder. Is this okay to wrap a loop inside an 'if'?
+=begin I think I added an extra question in there, already started with the allergy yes question and trying 
+to figure out how to get the list into it.... then I realized we were suppose to only do a list. hope this is okay, 
+leaving it in the code so I can look back as a reminder. Is this okay to wrap a loop inside an 'if'?
 =end
 	
 
-list_response = "" 
+			list_response = "" 
 
 		if allergies == "yes"
 				until list_response ==  "done" || list_response == "sunshine"
-	     			puts "please list"
+	     			puts "please list(type 'done' to exit)"
 	     			list_response = gets.chomp
 		     			if list_response == "sunshine"
 		       				puts "Probably a vampire inside allergy loop"
 	     	 			end
-				end
+				end	
+				
 		elsif correct_age && (garlic || insurance_enrollment)
 			puts "Probably not a vampire"
 		elsif !correct_age && (garlic || insurance_enrollment)
 			puts "Probably a vampire"
 		elsif !correct_age && !garlic && !insurance_enrollment
 			puts "Almost certainly a vampire"
-		elsif name
+		# Stuck!!!! name will only work if I used a condition that is not listed. example, if I give it correct age, yes 
+		# to garlic and yes to insurance, it will come back as "Probably not a vampire" instead of "a vampire name" 
+		elsif name 
 			puts "Definitely a vampire name"
 		else 
 			puts "Results inconclusive"
 		end
-	number_users -= 1 
+				
+number_users -= 1 
+		
+		
 end
 
 print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
-	
