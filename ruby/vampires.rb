@@ -24,41 +24,32 @@ until number_users <= 0
 	insurance_enrollment = gets.chomp == 'yes'
 	
 	puts "Do you have any allergies?"
-	allergies = gets.chomp
+	allergies = gets.chomp == "yes"
 
-	
-	
-	# If vampire input age is correct and eats garlic bread or needs insurance = Probably not a vampire
-	# If vampire input age is incorrect, hates garlic bread or waives insurance = Probably a vampire
-	# If vampire age is incorrect, hates garlic bread and doesn't want insurance = Almost certainly a vampire
-	# Name of "Drake Cula" or "Tu Fang" is definitely a vampire 
-	# 
-	
-=begin I think I added an extra question in there, already started with the allergy yes question and trying 
-to figure out how to get the list into it.... then I realized we were suppose to only do a list. hope this is okay, 
-leaving it in the code so I can look back as a reminder. Is this okay to wrap a loop inside an 'if'?
-=end
-	
+	list_response = "" 
 
-			list_response = "" 
-
-		if allergies == "yes"
-				until list_response ==  "done" || list_response == "sunshine"
+				
+			if allergies
+	     			until  list_response ==  "done" || list_response == "sunshine" 
 	     			puts "please list(type 'done' to exit)"
 	     			list_response = gets.chomp
 		     			if list_response == "sunshine"
-		       				puts "Probably a vampire inside allergy loop"
-	     	 			end
-				end	
+		       			puts "Probably a vampire inside allergy loop"
+	     				end
+	     			end
+	     		
+			end
+	# If vampire input age is correct and eats garlic bread or needs insurance = Probably not a vampire
+	# If vampire input age is incorrect, hates garlic bread or waives insurance = Probably a vampire
+	# If vampire age is incorrect, hates garlic bread and doesn't want insurance = Almost certainly a vampire
+	# Name of "Drake Cula" or "Tu Fang" is definitely a vampire 		
 				
-		elsif correct_age && (garlic || insurance_enrollment)
+		if correct_age && (garlic || insurance_enrollment)
 			puts "Probably not a vampire"
 		elsif !correct_age && (garlic || insurance_enrollment)
 			puts "Probably a vampire"
 		elsif !correct_age && !garlic && !insurance_enrollment
 			puts "Almost certainly a vampire"
-		# Stuck!!!! name will only work if I used a condition that is not listed. example, if I give it correct age, yes 
-		# to garlic and yes to insurance, it will come back as "Probably not a vampire" instead of "a vampire name" 
 		elsif name 
 			puts "Definitely a vampire name"
 		else 
@@ -71,3 +62,67 @@ number_users -= 1
 end
 
 print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+
+=begin 
+# Second version.... started with first version and then figured out I could write it another way
+# I was just wondering if both are fine, or maybe they're both not good? Thanks Tyler. 
+
+#Version 2
+
+
+puts "How many employees will be processed"
+employees = gets.chomp.to_i
+
+until employees == 0 
+
+	puts "what is your name"
+	name = gets.chomp
+
+	puts "How old are you?"
+	age = gets.chomp.to_i
+
+	puts "What year were you born?"
+	year = gets.chomp.to_i
+
+	correctyear = (2016 - year)
+
+	puts "Do you want garlic bread?"
+	garlic = gets.chomp
+
+	puts "Do you want insurance?"
+	insurance = gets.chomp
+
+	puts "Do you have any allergies?"
+	allergies = gets.chomp
+
+	list_response = "" 
+
+				
+			if allergies =="yes"
+	     			until  list_response ==  "done" || list_response == "sunshine" 
+	     			puts "please list(type 'done' to exit)"
+	     			list_response = gets.chomp
+		     			if list_response == "sunshine"
+		       			puts "Probably a vampire inside allergy loop"
+	     				end
+	     			end
+	     		
+			end	
+
+	 	if age == correctyear && (garlic == "yes" || insurance == "yes")
+			puts "Probably not a vampire"
+		elsif age != correctyear && (garlic == "no" || insurance == "no")
+			puts "Probably a vampire"
+		elsif age != correctyear && garlic == "no" && insurance =="no"
+			puts "Almost certainly a vampire"
+		elsif name == "Drake Cula" || name == "Tu Fang"
+			puts "Definitely a vampire"
+		else 
+			puts "Results inconclusive"
+
+		end
+employees -= 1
+end
+
+=end
+
