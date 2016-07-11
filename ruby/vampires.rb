@@ -26,19 +26,19 @@ until number_users <= 0
 	puts "Do you have any allergies?"
 	allergies = gets.chomp == "yes"
 
-	list_response = "" 
-
 				
-			if allergies
-	     			until  list_response ==  "done" || list_response == "sunshine" 
+		if allergies
+	     			while true
 	     			puts "please list(type 'done' to exit)"
 	     			list_response = gets.chomp
-		     			if list_response == "sunshine"
+	     				if list_response ==  "done" 
+	     				break
+	     				elsif list_response == "sunshine" 
 		       			puts "Probably a vampire inside allergy loop"
+		       			break
 	     				end
 	     			end
-	     		
-			end
+	     end
 	# If vampire input age is correct and eats garlic bread or needs insurance = Probably not a vampire
 	# If vampire input age is incorrect, hates garlic bread or waives insurance = Probably a vampire
 	# If vampire age is incorrect, hates garlic bread and doesn't want insurance = Almost certainly a vampire
@@ -95,8 +95,6 @@ until employees == 0
 	puts "Do you have any allergies?"
 	allergies = gets.chomp
 
-	list_response = "" 
-
 				
 			if allergies =="yes"
 	     			until  list_response ==  "done" || list_response == "sunshine" 
@@ -123,6 +121,8 @@ until employees == 0
 		end
 employees -= 1
 end
+
+print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 =end
 
