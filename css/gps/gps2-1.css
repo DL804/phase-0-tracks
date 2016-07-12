@@ -1,0 +1,35 @@
+body {
+  background-color: #DCDCDC
+}
+
+h1 {
+  background-color: #696969;
+  background-image: url(http://i.imgur.com/A2rqm.png);
+  padding: 10px;
+  text-align: center;
+}
+
+header {
+  font-family:arial;
+   display: inline-block;
+   width: 80%;
+}
+
+.column-1{
+   width:40%;
+   display:inline-block;
+   vertical-align: top;
+   background-color: #808080
+}
+
+.column-2{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #808080
+}
+
+footer{
+   color:red;
+   width: 40%;
+}
