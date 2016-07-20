@@ -25,7 +25,7 @@ client["budget"] = gets.chomp
 #print hash
 puts  "Here are your inputs"
 puts
-puts  client
+puts client
 #prompt designer if they need to update a key, but if they type "none" to exit
 puts
 puts "If you need to make a change, please type in the key name or type (none) to exit?"
@@ -35,23 +35,18 @@ user_response = gets.chomp
 #if response is one of the hash keys, get the updated response and update the hash key value. 
  	if 	user_response == "name"
 	   	puts "Please update the name"
-	   	updated_name = gets.chomp
-	   	client["name"] = updated_name
+	   	client["name"] = gets.chomp  	
  	elsif user_response == "age"
  		puts "Please update the age"
- 		updated_age = gets.chomp
- 		client["age"] = updated_age
+ 		client["age"] = gets.chomp
  	elsif user_response == "children"
  		puts "Please update the number of children"
- 		updated_children = gets.chomp
- 		client["children"] =  updated_children
+ 		client["children"] = gets.chomp
  	elsif user_response == "decor"
  		puts "Please update the decor choice"
- 		updated_decor == gets.chomp
- 		client["decor"] = updated_decor
+ 		client["decor"] == gets.chomp
  	elsif user_response == "budget"
- 		updated_budget == gets.chomp
- 		client["budget"] = updated_budget
+ 		client["budget"] == gets.chomp
  	else user_response == "none"  
  		puts "All edits completed"
  	end
