@@ -1,4 +1,3 @@
-
 def next_letter(name)
 newarray = []
 	# move vowels to the next vowel.... a --> e..but instead of working through entire alphabet, set vowel for ex. a --> d with .gsub before using .next method
@@ -48,4 +47,6 @@ index +=1
 (0...original_names.length).each do |i| puts "Here is your original name" + "#{original_names[i]}" + " and here is your spy name" + "#{stored_spy_names[i]}"
 end
 
-
+#I've been going over this and still can't get right. I lost the space in between the firstname and lastname
+#now I'm starting to doubt my use of gsub as some letters are correct once it's modified 
+#any comments, suggestions much appreciated. Thanks!
