@@ -4,7 +4,7 @@ Client's name, Age, Number of children, Decor theme, number of rooms
 =end 
 
 #Create a new hash named client
-client = {}
+client = []
 
 #Create new hash keys and insert value inputs 
 print "Please enter your name:"
