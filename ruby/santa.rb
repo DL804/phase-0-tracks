@@ -11,6 +11,21 @@ attr_accessor :gender
 		@age = 0 
 	end
 
+#=begin getter method
+	def age 
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+#setter method
+	def gender=(newgender)
+		@gender = newgender
+	end
+#=end 
+
+
 	def celebrate_birthday(age)
 		@newage = age +=1 
 	end
