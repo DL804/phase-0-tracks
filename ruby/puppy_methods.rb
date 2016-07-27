@@ -11,8 +11,8 @@ class Puppy
      end
   end
   
-  def roll_over(move)
-    puts "#{move}"
+  def roll_over
+    puts "*rolls over*"
   end 
   
   def dog_years(num)
@@ -34,7 +34,7 @@ end
 lucky = Puppy.new
 lucky.fetch("ball")
 lucky.speak(3)
-lucky.roll_over("*rolls over*") 
+lucky.roll_over
 lucky.dog_years("10")
 lucky.talking("How you doing?")
 
