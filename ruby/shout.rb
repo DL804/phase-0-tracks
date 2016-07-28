@@ -1,4 +1,4 @@
-# Release 0 
+=begin Release 0 
 
 module Shout
 
@@ -15,5 +15,28 @@ end
 p Shout.yell_angrily("mad")
 p Shout.yelling_happily("happy")
 
+=end
 
+# Release 3
+
+
+module Speed
+	def moving(sound)
+		puts "This is the sound when go fast #{sound}"
+	end
+end
+
+class Motorcycle
+	include Speed
+end
+
+class Car
+	include Speed
+end
+
+motorcycle = Motorcycle.new
+motorcycle.moving("Vroom Vroom")
+
+car = Car.new
+car.moving("Vrooooooooooooooooomm")
 
