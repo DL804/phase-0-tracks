@@ -11,7 +11,7 @@ attr_accessor :gender
 		@age = 0 
 	end
 
-#=begin getter method
+=begin getter method
 	def age 
 		@age
 	end
@@ -19,15 +19,15 @@ attr_accessor :gender
 	def ethnicity
 		@ethnicity
 	end
-#setter method
+	#setter method
 	def gender=(newgender)
 		@gender = newgender
 	end
-#=end 
+=end 
 
 
 	def celebrate_birthday(age)
-		@newage = age +=1 
+		@age +=1 
 	end
 	
 	def getmad(name)
@@ -38,6 +38,12 @@ attr_accessor :gender
 			end
 		end
 	end
+
+	#then I realized I could of written
+	#def getmad(name)
+	#@reindeer_ranking.delete(name)
+	#@reindeer_ranking.push(name)
+	#end .... this is much easier *sigh* 
 
 
 	def speak
@@ -87,14 +93,14 @@ class Santa2
 end 
 
 new_santas = []
-gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+gender1 = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicity1 = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 
 
 counter = 0 
 while counter < 50
-newsanta = Santa2.new(gender[rand(6)], ethnicity[rand(6)], rand(141))
+newsanta = Santa2.new(gender1[rand(6)], ethnicity1[rand(6)], rand(141))
 p newsanta
 counter +=1 
 end 
