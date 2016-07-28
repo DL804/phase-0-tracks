@@ -20,23 +20,31 @@ p Shout.yelling_happily("happy")
 # Release 3
 
 
-module Speed
-	def moving(sound)
-		puts "This is the sound when go fast #{sound}"
-	end
+module Shout
+
+  def yell_angrily(words)
+    puts words + "!!!" + " :("
+  end
+
+  def yelling_happily(words)
+  	puts words + "ahhh happy"
+  end
+
 end
 
-class Motorcycle
-	include Speed
+class Boy
+	include Shout
 end
 
-class Car
-	include Speed
+class Girl
+	include Shout
 end
 
-motorcycle = Motorcycle.new
-motorcycle.moving("Vroom Vroom")
+boy = Boy.new
+boy.yell_angrily("angry boy")
+boy.yelling_happily("happy boy")
 
-car = Car.new
-car.moving("Vrooooooooooooooooomm")
+girl = Girl.new
+girl.yell_angrily("angry girl")
+girl.yelling_happily("happy girl")
 
