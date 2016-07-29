@@ -30,44 +30,58 @@
 
 def pretty(grocery_list)
   grocery_list.each do |item, quantity|
-  puts "#{item}, qty: #{quantity}".capitalize
+  puts "#{item} qty: #{quantity}".capitalize
   end
 end
 
 def create_list(list)
-  grocery_list = {}
+  grocery_hash = {}
   arrayed_list = list.split(' ')
   arrayed_list.each do |item|
-  grocery_list[item] = 1  
-  end
-  return grocery_list
+  grocery_hash[item] = 1  
+end
+grocery_hash
 end
 
-def add_item(new_item, grocery_list)
-  grocery_list[new_item] = 1
+updated_list = create_list("Apple, Pizza, Cheese")
+
+def add_item(list,new_item,quantity )
+  list[new_item] = quantity
+end 
+
+add_item(updated_list, "Lemonade", 2)
+add_item(updated_list, "Tomatoes", 3)
+add_item(updated_list, "Onions", 1)
+add_item(updated_list, "Ice Cream", 4)
+
+
+def remove_item(list, old_item)
+  list.delete(old_item)
   #p grocery_list
 end
 
-# Calling method and storing it in the 'grocery_list' variable
-grocery_list = create_list("carrots apples cereal pizza")
+remove_item(updated_list, "Lemonade")
 
-def remove_item(old_item, grocery_list)
-  grocery_list.delete(old_item)
+
+
+def update_quantity(list, new_item, quantity)
+  list[new_item] = quantity
   #p grocery_list
 end
 
-def update_quantity(item, new_number, grocery_list)
-  grocery_list[item] = new_number
-  #p grocery_list
-end
+update_quantity(updated_list, "Ice Cream", 1)
 
-add_item("lemonade", grocery_list)
-update_quantity("lemonade", 2, grocery_list)
-add_item("tomatoes", grocery_list)
-update_quantity("tomatoes", 3, grocery_list)
-add_item("onions", grocery_list)
-add_item("ice cream", grocery_list)
-update_quantity("ice cream", 4, grocery_list)
-remove_item("lemonade", grocery_list)
-update_quantity("ice cream", 1, grocery_list)
-p pretty(grocery_list)
+pretty(updated_list)
+
+
+
+=begin
+Release 5
+1. It helped build a framework of what the code should look like, it made it easier to just check the psuedocode and insert it directly into the program
+2. hashes will allow for key and value to be accessed... with array, it'll be unorganized and harder to update using index
+3. Last line in the method
+4. I learned that we're able to pass other methods as an argument into another method as a paramater
+5. By breaking down the code into sections, we were able to work on one problem at a time. 	
+
+	
+=end
