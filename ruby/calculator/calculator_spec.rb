@@ -8,7 +8,7 @@
   # 'it' block for each individual test
     # expect(<YOUR CODE>).to eq <RESULT>
 
-require_relative 'calculator'
+require_relative 'Calculator'
 
 describe Calculator do
   let(:calculator) { Calculator.new }
