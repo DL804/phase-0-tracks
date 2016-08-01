@@ -1,18 +1,68 @@
-class Game
+class Word 
 
-	def match_letter(user1_word, user2_letter)
-	#take the final word and split it into an array 
-	correct_word = user1_word.split('')
-	#now iterate through each letter in that word, compare it to user_2 input 
-	#any matching letter will be pushed into a incomplete guessed word array 
-	incomplete_word = []
-		correct_word.each do |letter|
-			if letter == user2_letter
-			incomplete_word << letter 
-			end
+	attr_reader :guess_count, :player1input 
+	attr_accessor :correct_letters
+	
+	def initialize(player1input)
+		@player1input = player1input 
+		@guess_count = player1input.length
+		@guess = []
+		@correct_letters = [].join('')
+	end
+
+
+	def print_status
+	word = ""
+		player1input.split('').each do |letter|
+			if	@correct_letters.include?(letter)
+			word += letter
+			else 
+			word += "_ "
+			end 
+		end
+		 puts word
 	end 
-
-	def print 
-		
-
+	
+	def check_user2input(letter)
+		if @guess.include?(letter) || @correct_letters.include?(letter)
+		puts "You've already selected this letter, please select another"
+		elsif   @player1input.include?(letter)
+				@correct_letters << letter 
+			    puts "You guessed a letter, please pick another"
+		elsif  !@player1input.include?(letter)
+				@guess_count -=1
+				puts "letter is not in the word"
+		else  
+			puts "Sorry you ran out of guesses"
+		end
+	end
 end
+
+
+
+puts "Welcome to the Word game!"
+
+
+puts "Please enter a word for Player 2"
+player1word = gets.chomp 
+Player2 = Word.new(player1word)
+
+validinput = false || player1word == @correct_letters
+until validinput 
+puts "You have #{Player2.guess_count} guesses left"
+puts "Please enter a letter"
+player2letter = gets.chomp
+ if Player2.guess_count == 0
+ 	puts "You are out of guesses, try again"
+	validinput = true
+elsif player2letter.length > 1
+	puts "please only enter one letter"
+else 
+Player2.check_user2input(player2letter)
+Player2.print_status
+Player2.guess_count
+end
+end
+
+
+
