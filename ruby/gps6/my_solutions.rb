@@ -1,29 +1,31 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: Annie and Davina ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Annie Oh and Davina ].
+# We spent [1.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+#require_relative imports data from another file within the same directory
 #
 require_relative 'state_data'
 
 class VirusPredictor
-
+# state, population, population_density initializes upon new instance of class
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
-
+# utilizing two private methods to call on instance variables
   def virus_effects
     predicted_deaths    
     speed_of_spread
   end
 
-  private
+  private #hides the methods below so they are not accessible outside of the class. 
 
+ # takes population_density, population, state as parameters
+ +  # shows number of predicted deaths based on population_density
   def predicted_deaths
     # predicted deaths is solely based on population density
    
@@ -45,6 +47,9 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
+
+  +  # takes population_density and state as parameters
+ +  # calculates how quickly virus will spread based on population_density
 
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
@@ -98,3 +103,10 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+=begin
+The hashrocket which can be used to initialize a key with or without the symbol. And also a key with the symbol which can be used to access the values. 
+Require_relative gives you access to another file in the same directory... Require will need to search the computer for the file. 
+.Each method can be used to iterate through hashes
+That each method had instance variables which shouldn't be needed to be passed as arguments
+I learned a bit more about classes and understood a bit better with nested hashes and refactoring. But the challenge for me was refactoring and how to change the code without modifying it too much.  
+=end
