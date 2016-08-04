@@ -1,6 +1,6 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Annie and Davina ].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
@@ -68,6 +68,14 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+
+
+STATE_DATA.each do |state, info|
+  state = VirusPredictor.new(state, info[:population_density],info[:population] )
+  state.virus_effects
+end 
+
+
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
