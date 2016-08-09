@@ -1,0 +1,80 @@
+sqlite> .schema
+CREATE TABLE restaurant(id INTEGER PRIMARY KEY, Restaurant_name VARCHAR(255));
+CREATE TABLE reservation_list(id INTEGER PRIMARY KEY, name VARCHAR(255), Number_of_Party INT, Restaurant_id INT, Date_Time Datetime, FOREIGN KEY(Restaurant_id) REFERENCES restaurant(id));
+
+---------------
+1. Display information in one table
+
+sqlite> SELECT * FROM reservation_list;
+1|Darren|8|1|2016-08-08 18:00
+2|Joe|3|1|2016-08-08 16:00
+3|Randy|5|2|2016-08-08 16:00
+4|Jenny|4|2|2016-08-08 19:00
+5|Tyler|11|3|2016-08-08 19:00
+6|Chris|15|3|2016-08-09 16:30
+7|Mike|2|2|2016-08-10 17:30
+8|Amy|4|1|2016-08-10 20:30
+9|Fanny|3|1|2016-08-10 20:45
+10|Tek|5|2|2022-12-31 23:59:59
+sqlite>
+
+---------------
+2. Updating reservations with more than 10 people to a later time 20:00 on 2016-08-09
+
+sqlite> UPDATE reservation_list SET Date_Time = '2016-08-09 20:00' WHERE number_of_party > 10;
+sqlite>  SELECT * FROM reservation_list, restaurant  WHERE restaurant.id = reservation_list.restaurant_id;
+1|Darren|8|1|2016-08-08 18:00|1|Michael Mina
+2|Joe|3|1|2016-08-08 16:00|1|Michael Mina
+3|Randy|5|2|2016-08-08 16:00|2|Gary Danko
+4|Jenny|4|2|2016-08-08 19:00|2|Gary Danko
+5|Tyler|11|3|2016-08-09 20:00|3|Rich Table
+6|Chris|15|3|2016-08-09 20:00|3|Rich Table
+7|Mike|2|2|2016-08-10 17:30|2|Gary Danko
+8|Amy|4|1|2016-08-10 20:30|1|Michael Mina
+9|Fanny|3|1|2016-08-10 20:45|1|Michael Mina
+10|Tek|5|2|2016-08-11 21:00|2|Gary Danko
+---------------
+3. Displaying both tables joined
+
+sqlite> SELECT * FROM restaurant, reservation_list WHERE  reservation_list.restaurant_id = restaurant.id;
+1|Michael Mina|1|Darren|8|1|2016-08-08 18:00
+1|Michael Mina|2|Joe|3|1|2016-08-08 16:00
+2|Gary Danko|3|Randy|5|2|2016-08-08 16:00
+2|Gary Danko|4|Jenny|4|2|2016-08-08 19:00
+3|Rich Table|5|Tyler|11|3|2016-08-08 19:00
+3|Rich Table|6|Chris|15|3|2016-08-09 16:30
+2|Gary Danko|7|Mike|2|2|2016-08-10 17:30
+1|Michael Mina|8|Amy|4|1|2016-08-10 20:30
+1|Michael Mina|9|Fanny|3|1|2016-08-10 20:45
+2|Gary Danko|10|Tek|5|2|2016-08-11 21:00
+
+
+---------------
+4. Displaying only the reservation holder's name and restaurant name  
+
+sqlite> SELECT reservation_list.name, restaurant.Restaurant_name FROM reservation_list INNER JOIN restaurant ON reservation_list.restaurant_id = restaurant.id;
+Darren|Michael Mina
+Joe|Michael Mina
+Randy|Gary Danko
+Jenny|Gary Danko
+Tyler|Rich Table
+Chris|Rich Table
+Mike|Gary Danko
+Amy|Michael Mina
+Fanny|Michael Mina
+Tek|Gary Danko
+
+----------------
+5. Deleting reservations earlier than 17:00 on 2016-08-08 because of a glitch in system...
+Removed #2 Joe and #3 Randy who had earlier reservations
+
+sqlite> DELETE FROM reservation_list WHERE Date_Time < '2016-08-08 17:00';
+sqlite> SELECT * FROM restaurant, reservation_list WHERE  reservation_list.restaurant_id = restaurant.id;
+1|Michael Mina|1|Darren|8|1|2016-08-08 18:00
+2|Gary Danko|4|Jenny|4|2|2016-08-08 19:00
+3|Rich Table|5|Tyler|11|3|2016-08-09 20:00
+3|Rich Table|6|Chris|15|3|2016-08-09 20:00
+2|Gary Danko|7|Mike|2|2|2016-08-10 17:30
+1|Michael Mina|8|Amy|4|1|2016-08-10 20:30
+1|Michael Mina|9|Fanny|3|1|2016-08-10 20:45
+2|Gary Danko|10|Tek|5|2|2016-08-11 21:00
