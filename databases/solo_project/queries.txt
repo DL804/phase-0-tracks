@@ -65,7 +65,7 @@ Fanny|Michael Mina
 Tek|Gary Danko
 
 ----------------
-5. Deleting reservations earlier than 17:00 on 2016-08-08 because of a glitch in system...
+5. Deleting reservations earlier than 17:00 on 2016-08-08 
 Removed #2 Joe and #3 Randy who had earlier reservations
 
 sqlite> DELETE FROM reservation_list WHERE Date_Time < '2016-08-08 17:00';
@@ -78,3 +78,77 @@ sqlite> SELECT * FROM restaurant, reservation_list WHERE  reservation_list.resta
 1|Michael Mina|8|Amy|4|1|2016-08-10 20:30
 1|Michael Mina|9|Fanny|3|1|2016-08-10 20:45
 2|Gary Danko|10|Tek|5|2|2016-08-11 21:00
+
+
+Release 3:
+Inner join - returns rows when there is at least one match in BOTH tables
+Left join - returns all the rows from the left side table eveb if there is no match in the right table
+Right join - returns all the rows from right side table even if there is no match in the left table
+
+-------------------
+=> Joining with inner, sorting order by restaurant name
+
+sqlite> SELECT reservation_list.name, restaurant.Restaurant_name FROM reservation_list INNER JOIN restaurant ON reservation_list.restaurant_id = restaurant.id order by restaurant.restaurant_name;
+Jenny|Gary Danko
+Mike|Gary Danko
+Tek|Gary Danko
+Darren|Michael Mina
+Amy|Michael Mina
+Fanny|Michael Mina
+Tyler|Rich Table
+Chris|Rich Table
+
+------------------
+=> Joining with left after inserting a new reservation with a restaurant ID #4 that does not exist in the restaurant right table...no data will be displayed from the restaurant right table,  
+
+sqlite> INSERT INTO reservation_list (name, number_of_party, restaurant_ID, Date_Time) VALUES("testing join with ID not matching", 22, 4, '2016-08-22 19:45');
+sqlite> SELECT * FROM reservation_list
+   ...> ;
+1|Darren|8|1|2016-08-08 18:00
+4|Jenny|4|2|2016-08-08 19:00
+5|Tyler|11|3|2016-08-09 20:00
+6|Chris|15|3|2016-08-09 20:00
+7|Mike|2|2|2016-08-10 17:30
+8|Amy|4|1|2016-08-10 20:30
+9|Fanny|3|1|2016-08-10 20:45
+10|Tek|5|2|2016-08-11 21:00
+11|testing join with ID not matching|22|4|2016-08-22 19:45
+sqlite> SELECT reservation_list.name, restaurant.Restaurant_name FROM reservation_list left JOIN restaurant ON reservation_list.restaurant_id = restaurant.id;
+Darren|Michael Mina
+Jenny|Gary Danko
+Tyler|Rich Table
+Chris|Rich Table
+Mike|Gary Danko
+Amy|Michael Mina
+Fanny|Michael Mina
+Tek|Gary Danko
+testing join with ID not matching        <= test was create with ID #4, no display, match does not exist 
+
+---------------------
+
+=> Running inner join again with the test ID and it's still not showing because there are only three restaurant IDs... 1 = Michael Mina, 2 = Gary Danko, 3 = Rich Table ...test reservation was created with ID # 4 which does not exist so no match was found during the join so it was left out 
+
+
+sqlite> SELECT reservation_list.name, restaurant.Restaurant_name FROM reservation_list INNER JOIN restaurant ON reservation_list.restaurant_id = restaurant.id;
+Darren|Michael Mina
+Jenny|Gary Danko
+Tyler|Rich Table
+Chris|Rich Table
+Mike|Gary Danko
+Amy|Michael Mina
+Fanny|Michael Mina
+Tek|Gary Danko
+
+----------------------
+
+=> Running inner join, sorting using the reservation time 
+
+sqlite> SELECT reservation_list.Date_Time, reservation_list.name, restaurant.restaurant_name FROM reservation_list INNER JOIN restaurant ON reservation_list.restaurant_id = restaurant.id order by reservation_list.Date_Time;
+2016-08-08 18:00|Darren|Michael Mina
+2016-08-08 19:00|Jenny|Gary Danko
+2016-08-09 20:00|Tyler|Rich Table
+2016-08-09 20:00|Chris|Rich Table
+2016-08-10 17:30|Mike|Gary Danko
+2016-08-10 20:30|Amy|Michael Mina
+2016-08-10 20:45|Fanny|Michael Mina
+2016-08-11 21:00|Tek|Gary Danko
