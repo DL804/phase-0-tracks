@@ -1,0 +1,22 @@
+Release 2
+2. Joining three tables 
+
+SELECT *  FROM reviews JOIN users ON users.id = reviews.user_id JOIN businesses ON reviews.business_id = businesses.id;
+
+1|5|best service at Amir|1|4|4|Elon|Musk|1|Amir's Towing
+2|4|good sushi rolls|3|1|1|Darren|Lee|3|Sushi World
+3|2|poor drinks, expensive|4|8|8|Holly|Berry|4|The Beagle Nightclub
+
+3. Filtering fields to only show user's name, businesses name, star rating and the comment
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON users.id = reviews.user_id JOIN businesses ON reviews.business_id = businesses.id;
+
+Elon|Musk|Amir's Towing|5|best service at Amir
+Darren|Lee|Sushi World|4|good sushi rolls
+Holly|Berry|The Beagle Nightclub|2|poor drinks, expensive
+
+4. Display output for only one business
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON users.id = reviews.user_id JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.name = "Sushi World";
+
+Darren|Lee|Sushi World|4|good sushi rolls
