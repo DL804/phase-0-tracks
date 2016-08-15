@@ -51,9 +51,9 @@ user_response = gets.chomp
  		client[:children] = gets.chomp
  	elsif user_response == "decor"
  		puts "Please update the decor choice"
- 		client[:decor] == gets.chomp
+ 		client[:decor] = gets.chomp
  	elsif user_response == "budget"
- 		client[:budget] == gets.chomp
+ 		client[:budget] = gets.chomp
  	else user_response == "none"  
  		puts "All edits completed"
  	end
