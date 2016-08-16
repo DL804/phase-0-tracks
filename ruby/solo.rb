@@ -81,7 +81,7 @@ end
 
 
 	instance_array.each do |instance|
-	puts "You have a #{instance.year}, #{instance.brand} with #{instance.horsepower}HP"
+	puts "You created a #{instance.year}, #{instance.brand} motorcycle with #{instance.horsepower}HP"
 	puts "One last question, do you want to spin the tires on this #{instance.brand}('yes', 'no')?"
 	response = gets.chomp
 		if response == "yes"
