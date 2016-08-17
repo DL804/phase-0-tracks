@@ -1,77 +1,72 @@
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: convert string into a hash  
-  # .each go into and set a hash with key for item and quantity for value
+# steps: 
+  # create a new hash, convert string into hash by splitting 
   # set default quantity
   # print the list to the console [can you use one of your other methods here?]
-# output: hash 
+# output: hash
 
 # Method to add an item to a list
-# input: item name(key) and optional quantity(value) hash["key"] = "value"
-# steps: hash["key"] = "value"
+# input: list, item name(key) and optional quantity(value)
+# steps: hash[newkey:] = "value"
 # output: updated hash
 
 # Method to remove an item from the list
-# input: list(hash), item(key), quantity(value)
+# input: hash(list), key(item) 
 # steps: hash.delete("key")
 # output: updated hash
 
 # Method to update the quantity of an item
-# input: 3 parameter, list, item, quantity
-# steps: hash["key"] = "value"
+# input: hash key value
+# steps: list[item]= quantity
 # output: updated hash
 
 # Method to print a list and make it look pretty
-# input: list, key
-# steps: .each to print, capitalize, 
-# output: updated list
+# input: hash list and key
+# steps: iterate through hash list using key value as parameters and print out 
+# output: list of items 
 
-# Method to create a list
+def create_list(list)
+  newlist = {}
+  split_list = list.split(' ')
+  split_list.each do |item|
+    newlist[item] = 1
+  end
+  newlist
+end
 
-def pretty(grocery_list)
-  grocery_list.each do |item, quantity|
-  puts "#{item} qty: #{quantity}".capitalize
+array_list = "Lemonade Tomatoes Onions IceCream"
+original_list = create_list(array_list)
+
+def add_list(list, item, quantity)
+  list[item] = quantity
+end
+
+add_list(original_list, "cheese", 2)
+add_list(original_list, "bananas", 5)
+p original_list
+
+def delete_item(list, item)
+  list.delete(item)
+end
+
+delete_item(original_list, "Lemonade")
+p original_list
+
+def update_item(list, item, quantity)
+  list[item] = quantity
+end
+
+update_item(original_list, "IceCream", 5)
+p original_list
+
+def print_list(list)
+  list.each do |item, key|
+  puts "Here is your item #{item} and the amount need to buy #{key}"
   end
 end
 
-def create_list(list)
-  grocery_hash = {}
-  arrayed_list = list.split(' ')
-  arrayed_list.each do |item|
-  grocery_hash[item] = 1  
-end
-grocery_hash
-end
-
-updated_list = create_list("Apple, Pizza, Cheese")
-
-def add_item(list,new_item,quantity )
-  list[new_item] = quantity
-end 
-
-add_item(updated_list, "Lemonade", 2)
-add_item(updated_list, "Tomatoes", 3)
-add_item(updated_list, "Onions", 1)
-add_item(updated_list, "Ice Cream", 4)
-
-
-def remove_item(list, old_item)
-  list.delete(old_item)
-  #p grocery_list
-end
-
-remove_item(updated_list, "Lemonade")
-
-
-
-def update_quantity(list, new_item, quantity)
-  list[new_item] = quantity
-  #p grocery_list
-end
-
-update_quantity(updated_list, "Ice Cream", 1)
-
-pretty(updated_list)
+print_list(original_list)
 
 
 
