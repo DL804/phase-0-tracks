@@ -73,8 +73,9 @@ while count < input_number
 			if upgrade_response == "yes"
 				puts "Please type 'exhaust' for a +10HP boost or 'filter' for a +5HP boost"
 				upgrade_request = gets.chomp
-				@horsepower = newbike.horsepower_upgrade(upgrade_request) 
-				puts "Very cool, you started with #{horsepower_input}HP and now it's upgraded to #{@horsepower}HP"
+				original_horsepower = newbike.horsepower
+				newbike.horsepower_upgrade(upgrade_request) 
+				puts "Very cool, you started with #{original_horsepower}HP and now it's upgraded to #{newbike.horsepower}HP"
 			end	
 	count +=1
 end
