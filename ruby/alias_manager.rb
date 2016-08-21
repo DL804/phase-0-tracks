@@ -9,11 +9,12 @@ end
 def capitalize(name)
 	name = name.split(' ')
 	capitalized_string = ""
-	capitalized_string += lastname = name[0].capitalize
-	capitalized_string += " " +  firstname = name[1].capitalize
+	capitalized_string += name[0].capitalize
+	capitalized_string += " " +  name[1].capitalize
 end
 
 stored_names = {}
+
 
 
 puts "Please enter a name to convert"
@@ -32,6 +33,7 @@ end
 stored_names.each do |name, fake_name|
 puts "#{name}" + " is also known as " + "#{fake_name}"
 end
+
 
 
 
