@@ -31,5 +31,3 @@ test.add_item("mop")
 p test.list
 test.delete_item("do the dishes")
 p test.list
-
-
