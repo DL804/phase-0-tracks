@@ -55,14 +55,14 @@ match(joe, bob)
 //Release 3
 //function to take in integer for length and returns an array of strings with the same integer of words
 //a minimum of 1 letter and max of 10 letters 
-//set a string_generator variable equal to random string generator =>String.fromCharCode(Math.floor(Math.random() * (122 - 97) + 97))
-//set a number_of_letters variable to equal =>length of letters with 10 max and min 1 => Math.floor(Math.random() * (10 - 1) + 1)
 //create an empty array for random words variable
-//create an empty string for random letters
-//run loop until index is equal to given number
-//  while number_of_letters is more than 0, run loop to create each letter
-//  use string_generator for a new letter, then add it to the string variable
-//  when loop ends, push string into random_words empty array
+//create an empty string 
+//while inputted number is less than 0, run loop until index is equal to inputted number
+//random # of letter generator....set a number_of_letters variable to equal =>length of letters with 10 max and min 1 => Math.floor(Math.random() * (10 - 1) + 1)
+//		loop using the number given by random letter generator which will set how many letters will be in string, loop until index = number from random letter
+//		set a string_generator variable equal to random string generator =>String.fromCharCode(Math.floor(Math.random() * (122 - 97) + 97))
+// 		add each random letter into the empty string...loop will stop when the random number of letters loop is 0
+//  	when loop ends, push string into random_words empty array
 
 function randomWord(num){
 	var random_words = []
