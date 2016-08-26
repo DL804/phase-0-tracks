@@ -17,17 +17,29 @@ stored_names = {}
 
 
 
+# puts "Please enter a name to convert"
+# loop do
+# input = gets.chomp
+# 	if input != "done" 
+# 		stored_names[input] = capitalize(nextvowel(input))
+# 		p capitalize(nextvowel(input))
+# 		puts "please type in another name(type 'done' to exit):"
+# 	else 
+# 		break if input == "done"
+# 	end
+# end
+
+
+# could write this with while loop 
 puts "Please enter a name to convert"
-loop do
 input = gets.chomp
-	if input != "done" 
+	while input != "done" 
 		stored_names[input] = capitalize(nextvowel(input))
 		p capitalize(nextvowel(input))
-		puts "please type in another name(type 'done' to exit):"
-	else 
-		break if input == "done"
+		puts "please type in another name or (type 'done' to exit):"
+		input = gets.chomp
 	end
-end
+
 
 
 stored_names.each do |name, fake_name|
