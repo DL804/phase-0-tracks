@@ -36,7 +36,8 @@ function match(object1, object2){
 
 	if ((ob1keys == ob2keys) || (ob1value == ob2value)){
 		return true;
-		}else{return false
+		}else{
+			return false
 		}
 }
 
