@@ -31,26 +31,21 @@ function match(object1, object2){
 	var ob1keys = Object.keys(object1);
 	var ob2keys = Object.keys(object2);
 	
-	for (var i = 0; i < ob1keys.length; i++)
-	var ob1value = object1[ob1keys[i]];
-	var ob2value = object2[ob2keys[i]];
+	var ob1value = object1[ob1keys];
+	var ob2value = object2[ob2keys];
 
-	if (ob1keys[i] == ob2keys[i]){
-		if (ob1value == ob2value){
+	if ((ob1keys == ob2keys) || (ob1value == ob2value)){
 		return true;
-	}else{
-		return false;
-	} 
-}
+		}else{return false
+		}
 }
 
 
 
-joe = {"key": "value", "key3": "value5", "key3": "value3"}; 
-bob = {"key4": "value4", "key5": "value5", "key6": "value7"}; 
 
+joe = {"key4": "value4"}
+bob = {"key3": "value4"}
 match(joe, bob)
-
 
 //Release 3
 //function to take in integer for length and returns an array of strings with the same integer of words
