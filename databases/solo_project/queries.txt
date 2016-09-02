@@ -86,7 +86,7 @@ sqlite> SELECT * FROM restaurant, reservation_list WHERE  reservation_list.resta
 
 Release 3:
 Inner join - returns rows when there is at least one match in BOTH tables
-Left join - returns all the rows from the left side table eveb if there is no match in the right table
+Left join - returns all the rows from the left side table even if there is no match in the right table
 Right join - returns all the rows from right side table even if there is no match in the left table
 
 -------------------
@@ -107,7 +107,6 @@ Chris|Rich Table
 
 sqlite> INSERT INTO reservation_list (name, number_of_party, restaurant_ID, Date_Time) VALUES("testing join with ID not matching", 22, 4, '2016-08-22 19:45');
 sqlite> SELECT * FROM reservation_list; 
-
 1|Darren|8|1|2016-08-08 18:00
 4|Jenny|4|2|2016-08-08 19:00
 5|Tyler|11|3|2016-08-09 20:00
