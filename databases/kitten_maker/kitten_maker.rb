@@ -11,7 +11,8 @@ db = SQLite3::Database.new("kittens.db")
 db.results_as_hash = true
 
 # learn about fancy string delimiters
-create_table_cmd = <<-SQL
+create_table_cmd = <<-SQL #this can be anything, but end quote will have to be the same so SQL
+#below is a string in Ruby that will be passed to a method that will run it as SQL 
   CREATE TABLE IF NOT EXISTS kittens(
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
@@ -20,6 +21,7 @@ create_table_cmd = <<-SQL
 SQL
 
 # create a kittens table (if it's not there already)
+# this will run, pass string in as argument
 db.execute(create_table_cmd)
 
 # add a test kitten
