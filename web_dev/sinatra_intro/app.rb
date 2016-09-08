@@ -30,8 +30,13 @@ end
 #4 search using campus
 get '/city/:campus' do 
   campus = params[:campus]
-  list = db.execute("SELECT * FROM students where campus=?", [campus])[0]
-  "#{list['name']} is attending class at the #{campus} campus"
+  names = ""
+  list = db.execute("SELECT * FROM students where campus=?", [campus])
+  "Here is a list of names at the #{campus} campus:"
+  list.each do |x|
+    names << "#{x['name']}<br>"
+  end
+  names
 end
 
 # write a basic GET route
