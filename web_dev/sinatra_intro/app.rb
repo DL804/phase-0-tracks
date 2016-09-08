@@ -5,6 +5,35 @@ require 'sqlite3'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
+#Release 0 
+#1
+get '/contact' do 
+  "633 Folsom St., San Francisco, CA 94103"
+end
+
+#2 query parameter
+get '/great_job/' do 
+  person = params[:person]
+  if person
+    "Good job, #{person}!"
+  else 
+    "Good job!"
+  end
+end
+
+#3 route parameter
+get '/:number_1/add/:number_2' do 
+  sum = params[:number_1].to_i + params[:number_2].to_i
+  "results of #{params[:number_1]} + #{params[:number_2]} = #{sum}"
+end
+
+#4 search using campus
+get '/city/:campus' do 
+  campus = params[:campus]
+  list = db.execute("SELECT * FROM students where campus=?", [campus])[0]
+  "#{list['name']} is attending class at the #{campus} campus"
+end
+
 # write a basic GET route
 # add a query parameter
 # GET /
@@ -21,6 +50,7 @@ end
 
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
+  p params
 end
 
 # write a GET route that retrieves
