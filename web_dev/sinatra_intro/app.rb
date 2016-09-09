@@ -33,8 +33,8 @@ get '/city/:campus' do
   names = ""
   list = db.execute("SELECT * FROM students where campus=?", [campus])
   names << "Here is a list of students at the #{campus} campus: <br>"
-  list.each do |x|
-    names << "#{x['name']}<br>"
+  list.each do |student|
+    names << "#{student['name']}<br>"
   end
   names
 end
